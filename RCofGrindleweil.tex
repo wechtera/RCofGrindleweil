@@ -1,0 +1,486 @@
+\documentclass[letterpaper,twocolumn,openany,nodeprecatedcode]{dndbook}
+
+% Use babel or polyglossia to automatically redefine macros for terms
+% Armor Class, Level, etc...
+% Default output is in English; captions are located in lib/dndstrings.sty.
+% If no captions exist for a language, English will be used.
+%1. To load a language with babel:
+%	\usepackage[<lang>]{babel}
+%2. To load a language with polyglossia:
+%	\usepackage{polyglossia}
+%	\setdefaultlanguage{<lang>}
+\usepackage[english]{babel}
+%\usepackage[italian]{babel}
+% For further options (multilanguage documents, hypenations, language environments...)
+% please refer to babel/polyglossia's documentation.
+
+\usepackage[utf8]{inputenc}
+\usepackage[singlelinecheck=false]{caption}
+\usepackage{lipsum}
+\usepackage{listings}
+\usepackage{shortvrb}
+\usepackage{stfloats}
+\usepackage{subfiles}
+%\usepackage[bg=full]{dnd} % Options: bg=full, bg=print, bg=none
+\captionsetup[table]{labelformat=empty,font={sf,sc,bf,},skip=0pt}
+
+\MakeShortVerb{|}
+
+\lstset{%
+  basicstyle=\ttfamily,
+  language=[LaTeX]{TeX},
+  breaklines=true,
+}
+
+%%Handle chapter resets in each part
+\makeatletter
+\@addtoreset{chapter}{part}
+\makeatother
+%%%%%%%%%%%%%%%
+\newcommand{\bookauthor}{Adam Wechter}
+\newcommand{\booktitle}{Rat Catchers of Grindleweil}
+\newcommand{\booksubtitle}{A 5\textsuperscript{th} Ed. Dungeons \& Dragons Adventure Compendium} 
+
+
+\pdfinfo{
+	/Author (\bookauthor)
+	/Title  (\booktitle)
+	/Keywords (D&D;Adventure)
+}
+
+\fancyhead{} % Comment this if you want the paper texture back for bg=full mode (see lib/dndheader.sty for details)
+
+\fancyfoot[LO,RE]{\vspace{-0.1cm}
+\footnotesize{Not for resale. Permission granted to print or photocopy this document for personal use only. \booktitle}}
+
+% Reset footnote counter for each new page
+\usepackage{perpage} %the perpage package
+\MakePerPage{footnote} %the perpage package command
+
+% Start document
+\begin{document}
+
+% Your content goes here
+
+% Title page
+
+\begin{titlepage}\begin{onecolumn}
+\begin{center}
+	{\Huge \booktitle}
+
+	\vspace{0.5cm}
+	\includegraphics[width=\textwidth]{img/hr.jpeg}
+	
+	\vspace{0.5cm}
+	{\huge \booksubtitle}
+	
+	\vspace{0.5cm}
+	% Replace this picture with cover art
+	\begin{picture}(500,200)
+		\put(0,0){\framebox(500,200)}
+	\end{picture}
+	%\includegraphics[width=\textwidth]{img/cover.jpg}
+	
+	\vspace{0.5cm}
+	\lipsum[1] % Put the description here
+
+	\vspace{0.5cm}
+	%{\Large A xx-hour adventure for x xxth--xxth level characters}
+
+	\vfill
+	
+	{\Large by \bookauthor}
+	
+	\vspace{0.35cm}
+	\includegraphics[width=0.25\textwidth]{img/dmsguild.jpeg}
+\end{center}
+
+\begin{minipage}{0.94\textwidth}
+{\footnotesize
+	DUNGEONS \& DRAGONS, D\&D, Wizards of the Coast, Forgotten Realms, Ravenloft, the dragon ampersand, and all other Wizards of the Coast product names, and their respective logos are trademarks of Wizards of the Coast in the USA and other countries.\\
+	This work contains material that is copyright Wizards of the Coast and/or other authors. Such material is used with permission under the Community Content Agreement for Dungeon Masters Guild.\\
+	All other original material in this work is copyright 2016 by \bookauthor\ and published under the Community Content Agreement for Dungeon Masters Guild.}
+\end{minipage}
+\end{onecolumn}\end{titlepage}
+\clearpage
+
+%%%%%%%%%%%
+
+%\begin{document}
+
+\frontmatter
+
+%\maketitle
+
+\tableofcontents
+
+\mainmatter%
+
+\part{Background and Grindlewiel}
+
+\chapter{Introduction}
+\section{How to use this compendium}
+\DndDropCapLine{T}{his adventure is one in a series } of one-shots that I created, taking inspiration from a podcast, DnD is for Nerds. I designed the adventure to be played as a singular encapsulated adventure in a series of tall tavern tales. The intent is allow for a low stakes game where the players can explore their characters personality and make brave and heroic decisions without fear of oblivion for their character. 
+%series of tavern tales
+%tweak and reuse as needed
+%variety of adventures found within
+%challenging circumstances and trigger warnings
+\section{Scaling and tuning}
+\section{Acknowledgements}
+\chapter{The World of Grindlewiel}
+- Ferraxis (eastern Continent)
+- - Kanton (Southern country)
+- - - Porsarth (Capital)
+- - - Iron Hill (Medium Industrial town)
+-- Marshes of Fallovel
+\section{World Overview}
+%Include map here 
+%Cover different conteninents
+
+%%Planned Parts - 
+%%%Adventures
+%%%Appendix NPC Stat Blocks
+%%%Appendix Items
+%%%Appendix Maps
+
+\part{Adventures}
+
+\chapter{The Iron Hill Crypt}
+\DndDropCapLine{T}his adventure takes place on the continent of Ferraxis in the nation of Kanton, an empire at the southern tip of the continent spanning a third of the land. It's borders are marked by the marsh lands of Fallovel. This is a great introduction Dungeons \& Dragons adventure for new players and veteran alike. It presents a variety of obstacles your adventuring party can solve in a variety of ways. The adventure is tuned for a group of 3rd party adventurers (4-5) but may be adapted to different party sizes.
+
+\section{Introduction}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Running This Adventure}
+As mentioned, this is a variety adventure that is designed to be ran in a single session. Your group of players are dropped into the middle of a living, breathing world and although they may impact things, the world goes in with or without them. As this is an introductory adventure, Dungeon Masters should reward role playing and creative problem solving. There are a number of challenges so allowing players proceed after a particularly clever solution should not be a concern. At the same time, this presents opportunity to teach players that actions and decisions have repercussions. Engaging in a bar fight can certainly result in being knocked out and waking up the next day in an alley with penalties to checks after a poor nights sleep on the streets. Similarly, town guards should be challenging to bully into submission. Splitting the party because some players role play through the front gates well while the others do not is completely acceptable.
+
+\subsection{Story Overview}
+We join our adventuring party in a line of travelers waiting to gain entrance to the town of Iron Hill. While this is likely not the player's ultimate destination, their characters cannot help but look forward to a warm, tavern cooked meal, a brief rest in a softer bed, as well as making a few gold coin if the opportunity presents itself. The player's luck seems to be good arriving when they do in town for there is a grand seasonal market planned the next day that has attracted a crowd of merchants from far and wide. While attending the market however, they will notice a crazed person scratching and scraping at a central fountain which eventually reveals the entrance to an ancient crypt! What secrets are held within? Will our group of adventurers emerge with riches, or will they bring ruin discovering that sometimes, mysteries are better kept in the dark.
+
+\subsection{Culture of Kanton}
+Kanton is a larger nation that is an empire following what we consider to be traditional middle age Noble ranks. There is a king and royal family in the capital city of Porsarth however Iron Hill as a medium sized town, is ruled over by local nobility. Kanton culture believes strongly that boring is better. While things like magic and heroes are not banned or illegal, actions that are seen as attempts to stir up chaos or problems, especially through the arcane or divine are frowned upon and strongly discouraged. Often citizens will outright ignore such acts and feign disinterest or fear while guards will actively discourage such shows as disruptions to the general order of the public. Players should be encouraged to disguise acts of magic if possible and use flashy powerful spells at the risk of being escorted out of towns and villages. This information about public disposition to magic would be common knowledge amongst your party.
+
+\subsection{Iron Hill}
+Iron Hill is this medium sized industry town that harvests and has developed techniques for working trees from the local forest, known as Iron Wood, into a number of wares.   The trees have this property of being super heavy and having the strength of metal like steel.  The walls to this town are made of this iron wood.  Your party of adventurers have arrived near the end of the day and are waiting in line to enter the town before the gates are closed for the evening
+
+\begin{DndReadAloud}
+Behind you stands the Iron wood, a large forest of fantastical conifer trees that can tower hundreds of feet high and have trunks the width of small cottages. Even at this distance, you can still hear their creaks when stiff breezes blow through their ranks and you catch their ferric smell occasionally. Before you stands the town of Iron Hill, an industrious town near the border of Kanton atop a small clear hill. The town's defensive walls are made of trees that give this town its name and despite your proximity, the sounds of an active town you'd normally expect are muted and muffled besides the noise from the gate ahead. In the distance towards what you believe to be the center of town a small keep can be seen over the ramparts occupied by small groups of guards above.
+\end{DndReadAloud}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Gaining Entry} 
+The party must attempt to gain entry into the town if possible before daylight expires. Although Iron Hill is a welcoming place, the current nobles of town insist, especially on days where the population of the city may swell, on ensuring that potential troublemakers are discouraged from gaining entry to the town. As the party waits, there is a long line of 7/8 merchants, farmers and assorted families waiting to gain entry to the town in front of them. 
+
+There are are 5 or 6 guards keeping order by the gate while an administrative official meticulously asks questions and documents the assorted groups gaining entry to the town while additional guards patrol the walls above. An average survival or intelligence check allows players to recognize that it is unlikely that they will reach the front of the line before sundown meaning another night sleeping on the ground in the wilderness.
+\begin{DndSidebar}[float=!h]{A Night Under the Stars}
+While our adventuring party are no strangers to spending evenings under the stars or storms, the promise of a warm, comfortable bed should act as a strong motivator to entering the town tonight. Our adventuring party should have the funds to secure modest lodgings for the evening and following a week or two of traveling through the wild, cutting in line, bribing the guards or the line in front of them should be considered an appropriate option. Not all players need have this motivation if they believe their character is more comfortable spending time further from civilization.
+\end{DndSidebar}
+\subsection{Half-hearted attempt}
+Attempting to cut to the front of the line results in strong disapproval from those too shy from direct confrontation, and open hostility from those unafraid. Specifically the players risk the ire of the Mosslade Merchant Company, and their ever foul-tempered leader Wilkas. Should they attempt to skip the line, Wilkas will sharply confront the group and should they try to sweet talk their way through and fail, flash a knife in his belt in a threatening manner and strongly suggest the group returns to their spot in the back of the line. 
+%Consider using art here: https://preview.drivethrurpg.com/en/product/234202/Halfling-Thief-Merchant-Stock-Art
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\part{Garbage Below Here}
+\subsubsection{Subsubsection}
+Subsubsections are the furthest division of text that still have a block header. Below this level, headers are displayed inline.
+
+\paragraph{Paragraph}
+The paragraph format is seldom used in the core books, but is available if you prefer it to the ``normal'' style.
+
+\subparagraph{Subparagraph}
+The subparagraph format with the paragraph indent is likely going to be more familiar to the reader.
+
+\section{Special Sections}
+The module also includes functions to aid in the proper typesetting of multi-line section headers: |\DndFeatHeader| for feats, |\DndItemHeader| magic items and traps, and |\DndSpellHeader| for spells.
+
+\DndFeatHeader{Typesetting Savant}[Prerequisite: \LaTeX{} distribution]
+You have acquired a package which aids in typesetting source material for one of your favorite games, giving you the following benefits:
+
+\begin{itemize}
+  \item You have advantage on Intelligence checks to typeset new content.
+  \item When you fail an Intelligence check to typeset new content, you can ask questions online at the package's website.
+\end{itemize}
+
+\DndItemHeader{Foo's Quill}{Wondrous item, rare}
+This quill has 3 charges. While holding it, you can use an action to expend 1 of its charges. The quill leaps from your hand and writes a contract applicable to your situation.
+
+The quill regains 1d3 expended charges daily at dawn.
+
+\DndSpellHeader%
+  {Beautiful Typesetting}
+  {4th-level illusion}
+  {1 action}
+  {5 feet}
+  {S, M (ink and parchment, which the spell consumes)}
+  {Until dispelled}
+You are able to transform a written message of any length into a beautiful scroll. All creatures within range that can see the scroll must make a wisdom saving throw or be charmed by you until the spell ends.
+
+While the creature is charmed by you, they cannot take their eyes off the scroll and cannot willingly move away from the scroll. Also, the targets can make a wisdom saving throw at the end of each of their turns. On a success, they are no longer charmed.
+
+\section{Map Regions}
+The map region functions |\DndArea| and |\DndSubArea| provide automatic numbering of areas.
+
+\DndArea{Village of Hommlet}
+This is the village of hommlet.
+
+\DndSubArea{Inn of the Welcome Wench}
+Inside the village is the inn of the Welcome Wench.
+
+\DndSubArea{Blacksmith's Forge}
+There's a blacksmith in town, too.
+
+\DndArea{Foo's Castle}
+This is foo's home, a hovel of mud and sticks.
+
+\DndSubArea{Moat}
+This ditch has a board spanning it.
+
+\DndSubArea{Entrance}
+A five-foot hole reveals the dirt floor illuminated by a hole in the roof.
+
+\chapter{Text Boxes}
+
+The module has three environments for setting text apart so that it is drawn to the reader's attention. |DndReadAloud| is used for text that a game master would read aloud.
+
+\begin{DndReadAloud}
+  As you approach this module you get a sense that the blood and tears of many generations went into its making. A warm feeling welcomes you as you type your first words.
+\end{DndReadAloud}
+
+\section{As an Aside}
+The other two environments are the |DndComment| and the |DndSidebar|. The |DndComment| is breakable and can safely be used inline in the text.
+
+\begin{DndComment}{This Is a Comment Box!}
+  A |DndComment| is a box for minimal highlighting of text. It lacks the ornamentation of |DndSidebar|, but it can handle being broken over a column.
+\end{DndComment}
+
+The |DndSidebar| is not breakable and is best used floated toward a page corner as it is below.
+
+\begin{DndSidebar}[float=!b]{Behold the DndSidebar!}
+  The |DndSidebar| is used as a sidebar. It does not break over columns and is best used with a figure environment to float it to one corner of the page where the surrounding text can then flow around it.
+\end{DndSidebar}
+
+\section{Tables}
+The |DndTable| colors the even rows and is set to the width of a line by default.
+
+\begin{DndTable}[header=Nice Table]{XX}
+    Table head  & Table head \\
+    Some value  & Some value \\
+    Some value  & Some value \\
+    Some value  & Some value
+\end{DndTable}
+
+\chapter{Monsters and NPCs}
+
+% Monster stat block
+\begin{DndMonster}[float*=b,width=\textwidth + 8pt]{Monster Foo}
+  \begin{multicols}{2}
+    \DndMonsterType{Medium aberration (metasyntactic variable), neutral evil}
+
+    % If you want to use commas in the key values, enclose the values in braces.
+    \DndMonsterBasics[
+        armor-class = {9 (12 with \emph{mage armor})},
+        hit-points  = {\DndDice{3d8 + 3}},
+        speed       = {30 ft., fly 30 ft.},
+      ]
+
+    \DndMonsterAbilityScores[
+        str = 12,
+        dex = 8,
+        con = 13,
+        int = 10,
+        wis = 14,
+        cha = 15,
+      ]
+
+    \DndMonsterDetails[
+        %saving-throws = {Str +0, Dex +0, Con +0, Int +0, Wis +0, Cha +0},
+        %skills = {Acrobatics +0, Animal Handling +0, Arcana +0, Athletics +0, Deception +0, History +0, Insight +0, Intimidation +0, Investigation +0, Medicine +0, Nature +0, Perception +0, Performance +0, Persuasion +0, Religion +0, Sleight of Hand +0, Stealth +0, Survival +0},
+        %damage-vulnerabilities = {cold},
+        %damage-resistances = {bludgeoning, piercing, and slashing from nonmagical attacks},
+        %damage-immunities = {poison},
+        %condition-immunities = {poisoned},
+        senses = {darkvision 60 ft., passive Perception 10},
+        languages = {Common, Goblin, Undercommon},
+        challenge = 1,
+      ]
+    % Traits
+    \DndMonsterAction{Innate Spellcasting}
+    Foo's spellcasting ability is Charisma (spell save DC 12, +4 to hit with spell attacks). It can innately cast the following spells, requiring no material components:
+    \begin{DndMonsterSpells}
+      \DndInnateSpellLevel{misty step}
+      \DndInnateSpellLevel[3]{fog cloud, rope trick}
+      \DndInnateSpellLevel[1]{identify}
+    \end{DndMonsterSpells}
+
+    \DndMonsterAction{Spellcasting}
+    Foo is a 2nd-level spellcaster. Its spellcasting ability is Charisma (spell save DC 12, +4 to hit with spell attacks). It has the following sorcerer spells prepared:
+    \begin{DndMonsterSpells}
+      \DndMonsterSpellLevel{blade ward, fire bolt, light, shocking grasp}
+      \DndMonsterSpellLevel[1][3]{burning hands, mage armor, shield}
+    \end{DndMonsterSpells}
+
+    \DndMonsterSection{Actions}
+    \DndMonsterAction{Multiattack}
+    The foo makes two melee attacks.
+
+    %Default values are shown commented out
+    \DndMonsterAttack[
+      name=Dagger,
+      %distance=both, % valid options are in the set {both,melee,ranged},
+      %type=weapon, %valid options are in the set {weapon,spell}
+      mod=+3,
+      %reach=5,
+      %range=20/60,
+      %targets=one target,
+      dmg=\DndDice{1d4+1},
+      dmg-type=piercing,
+      %plus-dmg=,
+      %plus-dmg-type=,
+      %or-dmg=,
+      %or-dmg-when=,
+      %extra=,
+    ]
+
+    %\DndMonsterMelee calls \DndMonsterAttack with the melee option
+    \DndMonsterMelee[
+      name=Flame Tongue Longsword,
+      mod=+3,
+      %reach=5,
+      %targets=one target,
+      dmg=\DndDice{1d8+1},
+      dmg-type=slashing,
+      plus-dmg=\DndDice{2d6},
+      plus-dmg-type=fire,
+      or-dmg=\DndDice{1d10+1},
+      or-dmg-when=if used with two hands,
+      %extra=,
+    ]
+
+    %\DndMonsterRanged calls \DndMonsterAttack with the ranged option
+    \DndMonsterRanged[
+      name=Assassin's Light Crossbow,
+      mod=+1,
+      range=80/320,
+      dmg=\DndDice{1d8},
+      dmg-type=piercing,
+      %plus-dmg=,
+      %plus-dmg-type=,
+      %or-dmg=,
+      %or-dmg-when=,
+      extra={, and the target must make a DC 15 Constitution saving throw, taking 24 (7d6) poison damage on a failed save, or half as much damage on a successful one}
+    ]
+
+    % Legendary Actions
+    \DndMonsterSection{Legendary Actions}
+    The foo can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The foo regains spent legendary actions at the start of its turn.
+
+    \begin{DndMonsterLegendaryActions}
+      \DndMonsterLegendaryAction{Move}{The foo moves up to its speed.}
+      \DndMonsterLegendaryAction{Dagger Attack}{The foo makes a dagger attack.}
+      \DndMonsterLegendaryAction{Create Contract (Costs 3 Actions)}{The foo presents a contract in a language it knows and waves it in the face of a creature within 10 feet. The creature must make a DC 10 Intelligence saving throw. On a failure, the creature is incapacitated until the start of the foo's next turn. A creature who cannot read the language in which the contract is written has advantage on this saving throw.}
+    \end{DndMonsterLegendaryActions}
+  \end{multicols}
+\end{DndMonster}
+
+The |DndMonster| environment is used to typeset monster and NPC stat blocks. The module supplies many functions to easily typeset the contents of the stat block
+
+\part{Customization}
+
+\chapter{Colors}
+
+\begin{table*}[b]
+  \caption{\DndFontTableTitle{}Colors Supported by this Package}\label{tab:colors}
+
+  \begin{tabularx}{\linewidth}{lX}
+    \textbf{Color}                  & \textbf{Description} \\
+    \rowcolor{PhbLightGreen}
+    |PhbLightGreen|                 & Light green used in PHB Part 1 (Default) \\
+    \rowcolor{PhbLightCyan}
+    |PhbLightCyan|                  & Light cyan used in PHB Part 2 \\
+    \rowcolor{PhbMauve}
+    |PhbMauve|                      & Pale purple used in PHB Part 3 \\
+    \rowcolor{PhbTan}
+    |PhbTan|                        & Light brown used in PHB appendix \\
+    \rowcolor{DmgLavender}
+    |DmgLavender|                   & Pale purple used in DMG Part 1 \\
+    \rowcolor{DmgCoral}
+    |DmgCoral|                      & Orange-pink used in DMG Part 2 \\
+    \rowcolor{DmgSlateGray}
+    |DmgSlateGray| (|DmgSlateGrey|) & Blue-gray used in PHB Part 3 \\
+    \rowcolor{DmgLilac}
+    |DmgLilac|                      & Purple-gray used in DMG appendix \\
+    \rowcolor{BrGreen}
+    |BrGreen|                       & Gray-green used for tables in Basic Rules\\
+  \end{tabularx}
+\end{table*}
+
+This package provides several global color variables to style |DndComment|, |DndReadAloud|, |DndSidebar|, and |DndTable| environments.
+
+\begin{DndTable}[header=Box Colors]{lX}
+  Color            &  Description \\
+  |commentcolor|   & |DndComment| background \\
+  |readaloudcolor| & |DndReadAloud| background \\
+  |sidebarcolor|   & |DndSidebar| background \\
+  |tablecolor|     & background of even |DndTable| rows \\
+\end{DndTable}
+
+They also accept an optional color argument to set the color for a single instance. See Table~\ref{tab:colors} for a list of core book accent colors.
+
+\begin{lstlisting}
+\begin{DndTable}[color=PhbLightCyan]{cX}
+  d8 & Item \\
+  1  & Small wooden button \\
+  2  & Red feather \\
+  3  & Human tooth \\
+  4  & Vial of green liquid \\
+  5  & Loaded dice \\
+  6  & Tasty biscuit \\
+  7  & Broken axe handle \\
+  8  & Tarnished silver locket \\
+\end{DndTable}
+\end{lstlisting}
+
+\begin{DndTable}[color=PhbLightCyan]{cX}
+  d8 & Item \\
+  1  & Small wooden button \\
+  2  & Red feather \\
+  3  & Human tooth \\
+  4  & Vial of green liquid \\
+  5  & Loaded dice \\
+  6  & Tasty biscuit \\
+  7  & Broken axe handle \\
+  8  & Tarnished silver locket \\
+\end{DndTable}
+
+\section{Themed Colors}
+Use |\DndSetThemeColor[<color>]| to set |commentcolor|, |readaloudcolor|, |sidebarcolor|, and |tablecolor| to a specific color. Calling |\DndSetThemeColor| without an argument sets those colors to the current |themecolor|. In the following example the group limits the change to just a few boxes; after the group finishes, the colors are reverted to what they were before the group started.
+
+\begin{lstlisting}
+\begingroup
+\DndSetThemeColor[PhbMauve]
+
+\begin{DndComment}{This Comment Is in Mauve}
+  This comment is in the the new color.
+\end{DndComment}
+
+\begin{DndSidebar}{This Sidebar Is Also Mauve}
+  The sidebar is also using the new theme color.
+\end{DndSidebar}
+\endgroup
+\end{lstlisting}
+
+\begingroup
+\DndSetThemeColor[PhbMauve]
+
+\begin{DndComment}{This Comment Is in Mauve}
+  This comment is in the the new color.
+\end{DndComment}
+
+\begin{DndSidebar}{This Sidebar Is Also Mauve}
+  The sidebar is also using the new theme color.
+\end{DndSidebar}
+\endgroup
+
+\end{document}
